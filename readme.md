@@ -1,3 +1,3 @@
-# This are my React school projects
+# These are my React school projects
 
-![Markdown Logo](Screenshot_1.jpg)
+![Markdown Logo](/boxes/Screenshot_1.jpg)
