@@ -1,5 +1,7 @@
 import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
+import AnimalsList from "./AnimalsList";
+import BoxesList from "./BoxesList";
 
 const Home = () => {
   return (
@@ -27,21 +29,29 @@ const Nav = () => {
         <li>
           <Link to="/gallery">Gallery</Link>
         </li>
+        <li>
+          <Link to="/boxes">Boxes</Link>
+        </li>
+        <li>
+          <Link to="/animals">Animals</Link>
+        </li>
       </ul>
     </nav>
   );
 };
 
-const Main_router = () => {
+const Main = () => {
   return (
     <div>
       <Nav />
       <Switch>
         <Route path="/" exact component={Home}></Route>
         <Route path="/gallery" component={Gallery}></Route>
+        <Route path="/boxes" component={BoxesList}></Route>
+        <Route path="/animals" component={AnimalsList}></Route>
       </Switch>
     </div>
   );
 };
 
-export default Main_router;
+export default Main;

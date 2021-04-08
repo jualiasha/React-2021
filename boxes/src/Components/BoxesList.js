@@ -1,21 +1,7 @@
 import React, { Component } from "react";
+import BoxCard from "./BoxCard";
 
-const Box = (props) => {
-  return (
-    <div className="boxes">
-      <h2>{props.name}</h2>
-      <h3>{props.title}</h3>
-      <p>{props.age}</p>
-      <button onClick={clickMe}>Contact</button>
-    </div>
-  );
-};
-
-const clickMe = () => {
-  console.log("wow");
-};
-
-class Main extends Component {
+class BoxesList extends Component {
   state = {
     persons: [
       {
@@ -60,17 +46,17 @@ class Main extends Component {
     return (
       <main>
         <button onClick={this.handleClick}>Click me from main</button>
-        <Box
+        <BoxCard
           name={this.state.persons[0].name}
           age={this.state.persons[0].age}
           title={this.state.persons[0].title}
         />
-        <Box
+        <BoxCard
           name={this.state.persons[1].name}
           age={this.state.persons[1].age}
           title={this.state.persons[1].title}
         />
-        <Box
+        <BoxCard
           name={this.state.persons[2].name}
           age={this.state.persons[2].age}
           title={this.state.persons[2].title}
@@ -91,4 +77,4 @@ class Main extends Component {
   );
 }; */
 
-export default Main;
+export default BoxesList;
