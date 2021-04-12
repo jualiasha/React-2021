@@ -28,6 +28,12 @@
 .orange {
   background-color: orange;
 }
+.black {
+  background-color: black;
+}
+.white {
+  background-color: white;
+}
 
 #circles {
   display: flex;
