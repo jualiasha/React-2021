@@ -1,0 +1,30 @@
+#popup {
+  display: block;
+  background-color: rgb(255, 255, 255);
+  width: 80%;
+  min-height: 200px;
+  position: absolute;
+  left: 3rem;
+  top: 11rem;
+}
+
+#popup-level {
+  display: none;
+  background-color: rgb(255, 255, 255);
+  width: 80%;
+  min-height: 230px;
+  position: absolute;
+  left: 3rem;
+  top: 12rem;
+}
+
+#popup > p,
+#popup-level > p {
+  margin: 0;
+}
+
+#close {
+  text-align: right;
+  font-size: 20px;
+  cursor: pointer;
+}
