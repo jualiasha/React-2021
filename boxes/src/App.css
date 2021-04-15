@@ -12,6 +12,12 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 3rem;
+  font-size: 20px;
+}
 .boxes {
   display: inline-block;
   height: 200px;
@@ -42,6 +48,16 @@ button {
 main button {
   display: block;
   margin: 1rem auto;
+}
+
+input[type="text"] {
+  margin-bottom: 2rem;
+  border: 2px solid;
+  border-radius: 10px;
+  /* color: #6a6a6a; */
+  border-color: rgba(138, 139, 224, 0.479);
+  width: 50%;
+  font-size: 20px;
 }
 
 footer {

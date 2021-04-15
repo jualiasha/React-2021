@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import AnimalCard from "./AnimalCard";
+import { animals } from "./animals";
 import "./Animal.css";
+import SearchBox from "./SearchBox/SearchBox";
 
 class AnimalsList extends Component {
   state = {
-    animals: [
+    animals: animals /* [
       { id: 1, name: "Fox", img: "https://source.unsplash.com/AjZjBEjQ5Cw/" },
       {
         id: 2,
@@ -12,24 +14,41 @@ class AnimalsList extends Component {
         img: "https://source.unsplash.com/hS41iEO300E/",
       },
       { id: 3, name: "Wolf", img: "https://source.unsplash.com/WFPWB7Vum1E/" },
-    ],
+    ], */,
+    searchInput: "",
   };
-  clickHandler = (somethingstupid) => {
-    alert("Hello, my name is " + somethingstupid);
+  clickHandler = (name) => {
+    alert("Hello, my name is " + name);
   };
+
+  SearchValueHandler = (event) => {
+    this.setState({ searchInput: event.target.value });
+    console.log(this.state.searchInput);
+  };
+
   render() {
-    const animalslist = this.state.animals.map((whatever) => {
+    const animalfilter = this.state.animals.filter((animal) => {
+      return animal.name
+        .toLocaleLowerCase()
+        .includes(this.state.searchInput.toLocaleLowerCase());
+    });
+
+    const animalslist = animalfilter.map((animal) => {
       return (
         <AnimalCard
-          name={whatever.name}
-          img={whatever.img}
-          clickme={() => this.clickHandler(whatever.name)}
-          /* clickme={this.clickHandler.bind(this, whatever.name)} */
-          key={whatever.id}
+          name={animal.name}
+          clickme={() => this.clickHandler(animal.name)}
+          /* clickme={this.clickHandler.bind(this, animal.name)} */
+          key={animal.name}
         />
       );
     });
-    return <div className="animallist">{animalslist}</div>;
+    return (
+      <div>
+        <SearchBox search={this.SearchValueHandler} />
+        <div className="animallist">{animalslist}</div>
+      </div>
+    );
   }
 }
 
