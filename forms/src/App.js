@@ -22,6 +22,7 @@ class App extends Component {
 
   PopupHandler = (event) => {
     event.preventDefault();
+
     this.setState({
       showpopup: true,
     });
@@ -30,14 +31,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Forms input={this.InputValueHandler} submit={this.PopupHandler} />
-        <View
-          firstname={this.state.firstname}
-          lastname={this.state.lastname}
-          phonenumber={this.state.phonenumber}
-          message={this.state.message}
-          role={this.state.role}
-        />
         {this.state.showpopup && (
           <Popup
             firstname={this.state.firstname}
@@ -47,6 +40,14 @@ class App extends Component {
             role={this.state.role}
           />
         )}
+        <Forms input={this.InputValueHandler} submit={this.PopupHandler} />
+        <View
+          firstname={this.state.firstname}
+          lastname={this.state.lastname}
+          phonenumber={this.state.phonenumber}
+          message={this.state.message}
+          role={this.state.role}
+        />
       </div>
     );
   }
