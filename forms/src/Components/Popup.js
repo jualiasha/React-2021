@@ -4,16 +4,16 @@ const closeHandler = () => {
   window.location.reload();
 };
 
-const Popup = (props) => {
+const Popup = ({ firstname, lastname, phonenumber, message, role }) => {
   return (
     <div className="overlay">
       <div className="popup">
         <h1>You are going to send next info:</h1>
-        <p>First name:{props.firstname}</p>
-        <p>Last name: {props.lastname} </p>
-        <p>Phone number: {props.phonenumber} </p>
-        <p>Message: {props.message} </p>
-        <p>Role: {props.role} </p>
+        <p>First name:{firstname}</p>
+        <p>Last name: {lastname} </p>
+        <p>Phone number: {phonenumber} </p>
+        <p>Message: {message} </p>
+        <p>Role: {role} </p>
         <button id="close" onClick={closeHandler}>
           X Close
         </button>

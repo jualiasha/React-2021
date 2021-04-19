@@ -29,24 +29,33 @@ class App extends Component {
   };
 
   render() {
+    const props = {
+      firstname: this.state.firstname,
+      lastname: this.state.lastname,
+      phonenumber: this.state.phonenumber,
+      message: this.state.message,
+      role: this.state.role,
+    };
     return (
       <div>
         {this.state.showpopup && (
           <Popup
-            firstname={this.state.firstname}
+            {...props}
+            /* firstname={this.state.firstname}
             lastname={this.state.lastname}
             phonenumber={this.state.phonenumber}
             message={this.state.message}
-            role={this.state.role}
+            role={this.state.role} */
           />
         )}
         <Forms input={this.InputValueHandler} submit={this.PopupHandler} />
         <View
-          firstname={this.state.firstname}
+          {...props}
+          /* firstname={this.state.firstname}
           lastname={this.state.lastname}
           phonenumber={this.state.phonenumber}
           message={this.state.message}
-          role={this.state.role}
+          role={this.state.role} */
         />
       </div>
     );

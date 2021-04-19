@@ -1,9 +1,9 @@
 import React from "react";
 
-const Forms = (props) => {
+const Forms = (submit, input) => {
   return (
     <div>
-      <form onSubmit={props.submit}>
+      <form onSubmit={submit}>
         <div>
           <label htmlFor="firstname">First name</label>
           <input
@@ -12,7 +12,7 @@ const Forms = (props) => {
             id="firstname"
             required
             maxLength="200"
-            onChange={props.input}
+            onChange={input}
           />
         </div>
         <div>
@@ -23,7 +23,7 @@ const Forms = (props) => {
             id="lastname"
             required
             maxLength="200"
-            onChange={props.input}
+            onChange={input}
           />
         </div>
         <div>
@@ -35,7 +35,7 @@ const Forms = (props) => {
             id="phonenumber"
             required
             maxLength="13"
-            onChange={props.input}
+            onChange={input}
           />
         </div>
         <div>
@@ -47,12 +47,12 @@ const Forms = (props) => {
             rows="5"
             required
             maxLength="1000"
-            onChange={props.input}
+            onChange={input}
           ></textarea>
         </div>
         <div>
           <label htmlFor="role">Role</label>
-          <select name="role" id="role" required onChange={props.input}>
+          <select name="role" id="role" required onChange={input}>
             <option value="" defaultValue disabled hidden>
               Select
             </option>
