@@ -3,6 +3,7 @@ import Forms from "./Components/Forms";
 import View from "./Components/View";
 import Popup from "./Components/Popup";
 import "./App.css";
+import NotesList from "./Components/NotesList";
 /*import { BrowserRouter as Router } from "react-router-dom";*/
 
 class App extends Component {
@@ -13,7 +14,14 @@ class App extends Component {
     message: "",
     role: "",
     showpopup: false,
+    notes: [],
   };
+  componentDidMount() {
+    fetch("http://localhost:3001/notes")
+      .then((res) => res.json())
+      .then((data) => this.setState({ notes: data }));
+  }
+
   InputValueHandler = (event) => {
     this.setState({
       [event.target.name]: event.target.value,
@@ -57,6 +65,7 @@ class App extends Component {
           message={this.state.message}
           role={this.state.role} */
         />
+        <NotesList notes={this.state.notes} />
       </div>
     );
   }

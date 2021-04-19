@@ -1,0 +1,54 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "firstname": "Julia",
+      "lastname": "Matvi",
+      "phonenumber": "0449442286",
+      "message": "Hello World",
+      "role": "Student"
+    },
+    {
+      "id": 2,
+      "firstname": "Albina",
+      "lastname": "Ravio",
+      "phonenumber": "0444665743",
+      "message": "Hello World",
+      "role": "Professor"
+    },
+    {
+      "id": 3,
+      "firstname": "Natalia",
+      "lastname": "Somethind",
+      "phonenumber": "0449223645",
+      "message": "Hello World to everyone",
+      "role": "Teacher"
+    }
+  ],
+  "somethingelse": [
+    {
+      "id": 1,
+      "firstname": "Julia",
+      "lastname": "Matvi",
+      "phonenumber": "0449442286",
+      "message": "Hello World",
+      "role": "Student"
+    },
+    {
+      "id": 2,
+      "firstname": "Albina",
+      "lastname": "Ravio",
+      "phonenumber": "0444665743",
+      "message": "Hello World",
+      "role": "Professor"
+    },
+    {
+      "id": 3,
+      "firstname": "Natalia",
+      "lastname": "Somethind",
+      "phonenumber": "0449223645",
+      "message": "Hello World",
+      "role": "Teacher"
+    }
+  ]
+}
