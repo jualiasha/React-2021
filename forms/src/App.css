@@ -85,13 +85,26 @@ form button {
 }
 
 /*Popup*/
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: cadetblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
 .popup {
   background-color: rgb(233, 213, 187);
-  position: fixed;
+  position: relative;
   width: 90%;
   height: 77%;
   top: 0;
-
+  margin: 0 auto;
   z-index: 999;
   margin: 0 3%;
   padding: 0.5rem 1rem;
