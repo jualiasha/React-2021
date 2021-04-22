@@ -1,6 +1,6 @@
 import React from "react";
 
-const Forms = (submit, input) => {
+const Forms = ({ submit, input }) => {
   return (
     <div>
       <form onSubmit={submit}>

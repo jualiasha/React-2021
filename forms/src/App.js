@@ -8,11 +8,13 @@ import NotesList from "./Components/NotesList";
 
 class App extends Component {
   state = {
-    firstname: "",
-    lastname: "",
-    phonenumber: "",
-    message: "",
-    role: "",
+    inputdata: {
+      firstname: "",
+      lastname: "",
+      phonenumber: "",
+      message: "",
+      role: "",
+    },
     showpopup: false,
     notes: [],
   };
@@ -22,13 +24,16 @@ class App extends Component {
       .then((data) => this.setState({ notes: data }));
   }
 
-  InputValueHandler = (event) => {
+  inputValueHandler = (event) => {
     this.setState({
-      [event.target.name]: event.target.value,
+      inputdata: {
+        ...this.state.inputdata,
+        [event.target.name]: event.target.value,
+      },
     });
   };
 
-  PopupHandler = (event) => {
+  popupHandler = (event) => {
     event.preventDefault();
 
     this.setState({
@@ -36,19 +41,34 @@ class App extends Component {
     });
   };
 
+  sendDataHendler = () => {
+    const requestOption = {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(
+        this.state.inputdata
+      ) /*because we already have object inputdata*/,
+    };
+    fetch("http://localhost:3001/notes", requestOption);
+    /* .then((resp) => resp.json())
+      .then((data) => this.setState({ postId: data.id })); */
+    alert("Note is posted", window.location.reload());
+  };
+
   render() {
-    const props = {
+    /* const props = {
       firstname: this.state.firstname,
       lastname: this.state.lastname,
       phonenumber: this.state.phonenumber,
       message: this.state.message,
       role: this.state.role,
-    };
+    }; */
     return (
       <div>
         {this.state.showpopup && (
           <Popup
-            {...props}
+            {...this.state.inputdata}
+            submit={this.sendDataHendler}
             /* firstname={this.state.firstname}
             lastname={this.state.lastname}
             phonenumber={this.state.phonenumber}
@@ -56,9 +76,9 @@ class App extends Component {
             role={this.state.role} */
           />
         )}
-        <Forms input={this.InputValueHandler} submit={this.PopupHandler} />
+        <Forms input={this.inputValueHandler} submit={this.popupHandler} />
         <View
-          {...props}
+          {...this.state.inputdata}
           /* firstname={this.state.firstname}
           lastname={this.state.lastname}
           phonenumber={this.state.phonenumber}

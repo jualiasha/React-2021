@@ -4,7 +4,7 @@ const closeHandler = () => {
   window.location.reload();
 };
 
-const Popup = ({ firstname, lastname, phonenumber, message, role }) => {
+const Popup = ({ firstname, lastname, phonenumber, message, role, submit }) => {
   return (
     <div className="overlay">
       <div className="popup">
@@ -18,7 +18,7 @@ const Popup = ({ firstname, lastname, phonenumber, message, role }) => {
           X Close
         </button>
         <div className="submit_buttons">
-          <button className="green" onClick={closeHandler}>
+          <button className="green" onClick={submit}>
             Yes, I am Sure
           </button>
           <button className="red" onClick={closeHandler}>
